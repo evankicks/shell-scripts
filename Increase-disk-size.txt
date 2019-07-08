@@ -1,0 +1,23 @@
+Make sure you downloaded modify-ebs.sh then follow below steps. 
+
+To resize the encryption volumes, please use the following steps:
+
+1. Resize the EBS volume
+
+./modify-ebs.sh $region $volume_id $size
+
+example: ./modify-ebs.sh us-east-1 vol-xxxxxx 100
+
+2. Resize the partition
+
+sudo growpart /dev/xvdb 2
+
+3. Resize the encrypted layer (LUKS volume)
+
+sudo cryptsetup resize /dev/mapper/xvdb2
+
+4. Resize XFS
+
+sudo xfs_growfs -d /mnt
+
+

@@ -1,0 +1,6 @@
+preserve_hostname: true
+  - [sudo, sed, -i, "s/Port 22/Port 422/g", /etc/ssh/sshd_config]
+  - [sudo, service, sshd, restart ]
+
+
+output : { all : '| tee -a /var/log/cloud-init-output.log' } 
