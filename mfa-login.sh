@@ -50,4 +50,5 @@ echo $AWS_SECRET_ACCESS_KEY
 echo $AWS_SESSION_TOKEN
 echo $AWS_DEFAULT_REGION
 
+# To execute the script successfully, run the script with source(i.e   source mfa.sh)
 
